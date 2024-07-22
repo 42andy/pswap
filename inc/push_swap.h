@@ -6,7 +6,7 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 08:25:26 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 14:32:37 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:35:10 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,4 @@ int		ft_atol(const char *str, t_stack *stack);
 int		ft_count(char const *stack, char c);
 void	free_exit(t_stack *stack);
 
-# endif
+#endif

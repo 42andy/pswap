@@ -6,7 +6,7 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:37:46 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 14:04:03 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:41:41 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	radix_sort_b(t_stack *stack, int size_b, int bit_size, int j)
 		while (stack->size_b != 0)
 			pusha(stack);
 }
-
 
 void	radix_sort(t_stack *stack)
 {

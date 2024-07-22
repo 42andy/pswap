@@ -6,7 +6,7 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:26:17 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 14:30:32 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:40:27 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	pusha(t_stack *stack)
 {
 	int	tmp;
-	
+
 	tmp = stack->b[0];
 	ft_memmove(stack->a + 1, stack->a, sizeof(int) * stack->size_a);
 	stack->a[0] = tmp;
@@ -28,7 +28,7 @@ void	pusha(t_stack *stack)
 void	pushb(t_stack *stack)
 {
 	int	tmp;
-	
+
 	tmp = stack->a[0];
 	ft_memmove(stack->b + 1, stack->b, sizeof(int) * stack->size_b);
 	stack->b[0] = tmp;

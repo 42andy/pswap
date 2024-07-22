@@ -6,7 +6,7 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 09:41:53 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 15:11:59 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:43:11 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	free_exit(t_stack *stack)
 	}
 	exit(1);
 }
-
 
 int	ft_count(char const *stack, char c)
 {
@@ -70,7 +69,8 @@ int	ft_atol(const char *str, t_stack *stack)
 	}
 	while (str[i])
 	{
-		if (result > 2147483647 || (result * sign) < -2147483648 || ft_strlen(str) > 11)
+		if (result > 2147483647 || (result * sign) < -2147483648
+			|| ft_strlen(str) > 11)
 		{
 			write(1, "Error\n", 6);
 			free_exit(stack);

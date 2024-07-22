@@ -6,12 +6,11 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 08:31:55 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 15:13:23 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:41:07 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
 
 static void	check_args(int argc, char *argv[])
 {
@@ -45,7 +44,7 @@ static void	check_args(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack;
-	
+
 	check_args(argc, argv);
 	stack = malloc(sizeof * stack);
 	if (stack == NULL)

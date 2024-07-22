@@ -6,7 +6,7 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 12:44:27 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 14:34:13 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:40:41 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	swapa(int *tab)
 {
 	int	tmp;
-	
+
 	tmp = tab[0];
 	tab[0] = tab[1];
 	tab[1] = tmp;
@@ -25,7 +25,7 @@ void	swapa(int *tab)
 void	swapb(int *tab)
 {
 	int	tmp;
-	
+
 	tmp = tab[0];
 	tab[0] = tab[1];
 	tab[1] = tmp;

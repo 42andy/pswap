@@ -6,7 +6,7 @@
 /*   By: astoll <astoll@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 11:11:24 by astoll            #+#    #+#             */
-/*   Updated: 2024/07/22 15:14:42 by astoll           ###   ########.fr       */
+/*   Updated: 2024/07/22 20:40:38 by astoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	chain_args(int argc, char *argv[], t_stack *stack)
 	char	*tmp;
 	char	*tmp2;
 	int		i;
-	
+
 	i = 1;
 	tmp2 = ft_strdup("");
 	while (i < argc && argv[i] != NULL)
@@ -122,10 +122,10 @@ void	init_index(t_stack *stack)
 
 	index_a = malloc(stack->size_a * sizeof * index_a);
 	if (index_a == NULL)
-		{
-				write(1, "Error\n", 6);
-				free_exit(stack);
-		}
+	{
+		write(1, "Error\n", 6);
+		free_exit(stack);
+	}
 	i = -1;
 	while (++i < stack->size_a)
 	{
