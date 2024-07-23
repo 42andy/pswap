@@ -12,29 +12,28 @@
 
 #include "../inc/push_swap.h"
 
-static void	check_args(int argc, char *argv[])
+void	check_args(int argc, char *argv[])
 {
 	int	i;
 	int	j;
 
-	i = 1;
 	if (argc < 2)
 		exit(1);
+	i = 1;
 	while (i < argc)
 	{
 		j = 0;
-		if (!argv[i][0] || (argv[i][0] && argv[i][0] == ' '))
+		if (argv[i][0] == '\0' || argv[i][0] == ' ')
+			exit(write(2, "Error\n", 6));
+		while (argv[i][j])
 		{
-			write(1, "Error\n", 6);
-			exit (1);
-		}
-		while (argv[i][j] != '\0')
-		{
-			if ((!(ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')))
-			{
-				write(1, "Error\n", 6);
-				exit (1);
-			}
+			if ((argv[i][j] == '-' || argv[i][j] == '+') &&
+				(!ft_isdigit(argv[i][j + 1]) || (j > 0 &&
+				ft_isdigit(argv[i][j - 1]))))
+				exit(write(2, "Error\n", 6));
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' &&
+				argv[i][j] != '-' && argv[i][j] != '+')
+				exit(write(2, "Error\n", 6));
 			j++;
 		}
 		i++;

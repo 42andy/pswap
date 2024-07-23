@@ -30,18 +30,46 @@ void	create_stacks(int argc, char *argv[], t_stack *stack)
 	stack->a = malloc(stack->size_a * sizeof * stack->a);
 	if (stack->a == NULL)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		free_exit(stack);
 	}
 	stack->b = malloc(stack->size_a * sizeof * stack->b);
 	if (stack->b == NULL)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		free_exit(stack);
 	}
 }
 
 void	chain_args(int argc, char *argv[], t_stack *stack)
+{
+	char	*tmp;
+	char	*new;
+	int		i;
+
+	tmp = ft_strdup("");
+	if (!tmp)
+		exit(write(2, "Error\n", 6));
+	i = 1;
+	while (i < argc)
+	{
+		new = ft_strjoin(tmp, argv[i]);
+		free(tmp);
+		if (!new)
+			exit(write(2, "Error\n", 6));
+		if (i++ < argc - 1)
+		{
+			tmp = ft_strjoin(new, " ");
+			free(new);
+			if (!tmp)
+				exit(write(2, "Error\n", 6));
+		}
+		else
+			tmp = new;
+	}
+	stack->chained = tmp;
+}
+/*void	chain_args(int argc, char *argv[], t_stack *stack)
 {
 	char	*tmp;
 	char	*tmp2;
@@ -66,12 +94,12 @@ void	chain_args(int argc, char *argv[], t_stack *stack)
 	stack->chained = ft_strdup(tmp);
 	if (stack->chained == NULL)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		free_exit(stack);
 	}
 	if (tmp)
 		free(tmp);
-}
+}*/
 
 void	split_chain(t_stack *stack)
 {
@@ -104,7 +132,7 @@ void	dup_check(t_stack *stack)
 		{
 			if (stack->a[i] == stack->a[j])
 			{
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				free_exit(stack);
 			}
 			j++;
@@ -123,7 +151,7 @@ void	init_index(t_stack *stack)
 	index_a = malloc(stack->size_a * sizeof * index_a);
 	if (index_a == NULL)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		free_exit(stack);
 	}
 	i = -1;

@@ -54,37 +54,29 @@ int	ft_atol(const char *str, t_stack *stack)
 {
 	int			i;
 	long		sign;
-	long long	result;
+	long long	res;
 
 	i = 0;
 	sign = 1;
-	result = 0;
+	res = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if ((str[i] == 43 || str[i] == 45))
 	{
-		if (str[i] == 45)
+		if (str[i++] == 45)
 			sign = -1;
-		i++;
 	}
 	while (str[i])
 	{
-		if (result > 2147483647 || (result * sign) < -2147483648
+		res = res * 10 + (str[i++] - 48);
+		if ((res > 2147483647 && sign == 1) || (res > 2147483648 && sign == -1)
 			|| ft_strlen(str) > 11)
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			free_exit(stack);
 		}
-		if (!(str[i] >= '0' && str[i] <= '9'))
-		{
-			write(1, "Error\n", 6);
-			free_exit(stack);
-		}
-		result = result * 10;
-		result += str[i] - 48;
-		i++;
 	}
-	return ((int)(result * sign));
+	return ((int)(res * sign));
 }
 
 void	sort_check(t_stack *stack)
