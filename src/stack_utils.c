@@ -69,37 +69,6 @@ void	chain_args(int argc, char *argv[], t_stack *stack)
 	}
 	stack->chained = tmp;
 }
-/*void	chain_args(int argc, char *argv[], t_stack *stack)
-{
-	char	*tmp;
-	char	*tmp2;
-	int		i;
-
-	i = 1;
-	tmp2 = ft_strdup("");
-	while (i < argc && argv[i] != NULL)
-	{
-		tmp = ft_strjoin(tmp2, argv[i]);
-		if (tmp2)
-			free(tmp2);
-		if (i != argc - 1)
-		{
-			tmp2 = ft_strjoin(tmp, " ");
-			if (tmp)
-				free(tmp);
-			tmp = tmp2;
-		}
-		i++;
-	}
-	stack->chained = ft_strdup(tmp);
-	if (stack->chained == NULL)
-	{
-		write(2, "Error\n", 6);
-		free_exit(stack);
-	}
-	if (tmp)
-		free(tmp);
-}*/
 
 void	split_chain(t_stack *stack)
 {
